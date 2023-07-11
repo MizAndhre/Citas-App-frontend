@@ -76,7 +76,7 @@ function App() {
 							</Route>
 
 							{/* Rutas Privadas Paciente*/}
-							<Route path='/paciente/perfil' element={<RutaProtegida />}>
+							<Route path='/paciente/perfil/' element={<RutaProtegida />}>
 								<Route index element={<Perfil />} />
 								<Route path='notificacion' element={<Notificaciones />} />
 								<Route path='editar' element={<EditarPerfilPaciente />} />
@@ -96,7 +96,7 @@ function App() {
 							</Route>
 
 							{/* Rutas Privadas Paciente*/}
-							<Route path='/admin/perfil' element={<RutaProtegidaAdmin />}>
+							<Route path='/admin/perfil/' element={<RutaProtegidaAdmin />}>
 								<Route index element={<PerfilAdmin />} />
 								<Route path='notificacion' element={<Notificaciones />} />
 								<Route path='lista-doctores' element={<ListaDoctores />} />
