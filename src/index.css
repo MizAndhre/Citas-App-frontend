@@ -1,0 +1,264 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Pagina de Inicio */
+@layer components {
+	.contenedor-cards {
+		@apply container mx-auto md:grid md:grid-cols-2 lg:grid-cols-3 px-6 items-center my-12 md:my-0 xl:gap-20 2xl:gap-36;
+	}
+	.card {
+		@apply bg-white my-10 mx-14 md:my-5 md:mx-10 py-10 px-10 rounded-lg flex items-center flex-col hover:scale-110 shadow-xl;
+	}
+
+	.circulo-icono {
+		@apply w-24 h-24 rounded-full border-4 border-gray-600 flex items-center justify-center;
+	}
+
+	.icono {
+		@apply text-6xl text-gray-600 text-center;
+	}
+
+	.card-titulo {
+		@apply mt-5 text-xl font-bold text-gray-700;
+	}
+
+	.card-btn {
+		@apply bg-teal-600 
+        w-full  py-3 px-5 rounded-xl text-white text-center uppercase font-bold mt-5 cursor-pointer hover:bg-teal-800 transition-all;
+	}
+}
+
+/* Componentes utilizados en Registrar | Login | Cambiar Password */
+@layer components {
+	.titulo-auth {
+		@apply text-teal-600 font-black text-6xl;
+	}
+
+	.titulo-auth span {
+		@apply text-gray-600;
+	}
+
+	.div-formulario {
+		@apply mt-10 md:mt-5 shadow-lg px-5 lg:px-10 py-10 rounded-xl bg-white;
+	}
+
+	.div-formulario-doctor {
+		@apply mt-10 md:mt-5 shadow-lg px-5 lg:px-10 py-10 rounded-xl bg-white justify-center;
+	}
+
+	.label-form {
+		@apply capitalize text-gray-600 block text-xl font-bold
+        before:content-['*'] before:mr-1 before:text-red-600;
+	}
+
+	.label-form-no {
+		@apply capitalize text-gray-600 block text-xl font-bold;
+	}
+
+	.label-form-sub-ast {
+		@apply text-right text-xl font-bold 
+		before:content-['Campos_Obligatorios'] 
+		before:mr-1 
+		before:text-xs 
+		before:font-normal 
+		before:italic 
+		before:capitalize 
+        after:content-['*'] 
+		after:ml-1 after:text-red-600;
+	}
+
+	.label-form-sub {
+		@apply capitalize text-gray-600 block text-base font-medium mt-2;
+	}
+
+	.label-disponibilidad {
+		@apply capitalize text-gray-600 block text-xl font-bold after:content-['(formato_24_horas)'] after:ml-1 after:text-xs after:font-normal after:italic after:lowercase 
+        before:content-['*'] before:mr-1 before:text-red-600;
+	}
+
+	.label-password {
+		@apply capitalize text-gray-600 block text-xl font-bold after:content-['(mínimo_6_caracteres)'] after:ml-1 after:text-xs after:font-normal after:italic after:lowercase 
+        before:content-['*'] before:mr-1 before:text-red-600;
+	}
+
+	.input-form {
+		@apply border w-full p-3 mt-3 bg-gray-50 rounded-xl focus:outline-none focus:border-orange-600 focus:ring-1 focus:ring-orange-600;
+	}
+
+	.nav-enlace {
+		@apply mt-10 lg:flex lg:justify-between;
+	}
+
+	.enlace {
+		@apply block cursor-pointer text-center text-gray-500 my-5 hover:text-gray-800 transition-colors hover:underline;
+	}
+}
+
+/* Componentes genéricos */
+@layer components {
+	.main-container {
+		@apply flex flex-col w-full;
+	}
+	.main {
+		@apply overflow-y-auto
+		border-2 border-teal-800 rounded-md shadow-md mx-8 mb-5 flex-grow p-8;
+	}
+	.titulo {
+		@apply font-semibold text-4xl text-teal-800;
+	}
+
+	.subtitulo {
+		@apply font-medium text-2xl my-5 text-gray-600;
+	}
+
+	.div-img {
+		@apply flex justify-center items-center mt-5;
+	}
+
+	.btn {
+		@apply bg-teal-600 
+        w-full  py-3 px-10 rounded-xl text-white text-center uppercase font-bold mt-5 cursor-pointer hover:bg-teal-800 transition-all;
+	}
+}
+
+/* Componentes utilizados en Notificacions */
+@layer components {
+	.tab-texto-base {
+		@apply my-5 px-8 py-4 rounded-md cursor-pointer text-lg;
+	}
+
+	.tab-texto-activo {
+		@apply border-b-4 border-teal-700 text-teal-700 font-semibold;
+	}
+
+	.tab-texto-desactivo {
+		@apply text-gray-700;
+	}
+
+	.div-titulo {
+		@apply flex justify-end items-center pb-4;
+	}
+
+	.card-notif {
+		@apply border border-gray-300 text-gray-800 py-2 px-4 rounded-lg shadow-md cursor-pointer transition-all hover:border-teal-800 hover:border-2 mb-3
+		duration-200;
+	}
+}
+
+/* Clases utilizadas en las tablas */
+@layer components {
+	.tabla {
+		@apply mt-6 w-full min-w-[640px] table-auto;
+	}
+
+	.tabla-head {
+		@apply bg-gray-100 rounded-lg border-b-2 border-gray-800
+		border-t;
+	}
+
+	.columna {
+		@apply p-3 font-semibold text-gray-500 tracking-wide text-left;
+	}
+
+	.tabla-body {
+		@apply bg-white divide-y divide-gray-200;
+	}
+
+	.tabla-celda {
+		@apply px-3 py-4;
+	}
+
+	.enlace-tabla {
+		@apply cursor-pointer  text-gray-500 hover:text-gray-800 transition-colors hover:underline;
+	}
+
+	.btn-red {
+		@apply w-fit cursor-pointer  rounded-lg 
+		bg-gradient-to-tr from-red-600 to-red-400
+		text-white py-0.5 px-2 font-semibold
+		mr-2;
+	}
+
+	.btn-green {
+		@apply w-fit cursor-pointer  rounded-lg 
+		bg-gradient-to-tr from-green-600 to-green-400
+		text-white py-0.5 px-2 font-semibold mr-2 mb-2;
+	}
+
+	.btn-yellow {
+		@apply w-fit cursor-pointer  rounded-lg bg-gradient-to-tr from-yellow-600 to-yellow-400 text-white py-0.5 px-2 font-semibold mr-2;
+	}
+
+	.btn-gray {
+		@apply w-fit cursor-pointer  rounded-lg bg-gradient-to-tr from-gray-600 to-gray-400 text-white py-0.5 px-2 font-semibold mr-2;
+	}
+
+	.pill-red {
+		@apply w-fit  rounded-lg 
+		bg-gradient-to-tr from-red-600 to-red-400
+		text-white py-0.5 px-2 font-semibold
+		mr-2;
+	}
+
+	.pill-green {
+		@apply w-fit  rounded-lg 
+		bg-green-600 
+		text-white py-0.5 px-2 font-semibold mr-2 mb-2;
+	}
+
+	.pill-yellow {
+		@apply w-fit  rounded-lg  bg-yellow-500  text-white py-0.5 px-2 font-semibold mr-2;
+	}
+}
+
+/* Clases utilizadas Form cambiar info */
+@layer components {
+	.div-form-editar {
+		@apply px-5 lg:px-10 py-5 rounded-xl bg-white;
+	}
+}
+
+/* Clases tarjetas */
+@layer components {
+	.div-card {
+		@apply lg:max-w-xs max-w-sm p-8 bg-white border border-teal-800 rounded-lg shadow-lg mt-5 hover:scale-105 cursor-pointer;
+	}
+
+	.div-card-icono {
+		@apply text-2xl font-bold text-gray-700 pr-2;
+	}
+
+	.div-card-titulo {
+		@apply mb-3 text-2xl font-bold tracking-tight text-gray-700 pb-2 border-b border-gray-800;
+	}
+
+	.div-card-atributo {
+		@apply mb-3 font-semibold text-gray-600;
+	}
+	.div-card-btn {
+		@apply cursor-pointer  px-3 py-2  bg-teal-600 rounded-lg hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 transition-all text-white
+		flex  items-center justify-start;
+	}
+
+	.div-card-btn > p {
+		@apply font-bold pr-2;
+	}
+}
+
+/* Clases Dashboard */
+@layer components {
+	.card-dash {
+		@apply flex flex-col rounded-xl px-8 py-5 items-center justify-center min-w-[160px] 
+		bg-gray-100
+		text-gray-700 shadow-md;
+	}
+
+	.card-dash-titulo {
+		@apply font-normal text-xl my-5 uppercase;
+	}
+
+	.card-dash-numero {
+		@apply font-bold text-3xl;
+	}
+}
