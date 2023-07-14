@@ -33,7 +33,7 @@ const Login = () => {
 			const url = "/usuarios/login";
 			const { data } = await clienteAxios.post(url, { email, password });
 
-			console.log(data);
+			// console.log(data);
 			//guardar al usuario en local storage para mantener la sesion
 			localStorage.setItem("token", data.token);
 			localStorage.setItem("role", data.role);

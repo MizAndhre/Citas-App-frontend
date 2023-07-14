@@ -7,13 +7,13 @@ import { toast } from "react-hot-toast";
 const EditarPerfilPaciente = () => {
 	const { auth, actualizarPerfil, autenticarUsuario } = useAuth();
 	const [perfil, setPerfil] = useState({});
-	const navigate = useNavigate();
 	const { alertaError } = useAlerta();
 
 	useEffect(() => {
 		setPerfil(auth);
 	}, [auth]);
 
+	console.log(perfil);
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		console.log(perfil);
