@@ -24,8 +24,6 @@ const EditarPerfilDoctor = () => {
 		}
 
 		const resultado = await actualizarPerfil(perfil);
-		toast.custom(alertaExito("Perfil Actualizado"));
-		navigate("/doctor/perfil");
 		autenticarUsuario();
 	};
 

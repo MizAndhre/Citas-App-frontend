@@ -82,6 +82,7 @@ const VerCitas = () => {
 							<th className='columna'>Doctor</th>
 							<th className='columna'>Fecha</th>
 							<th className='columna'>Hora</th>
+							<th className='columna'>Motivo</th>
 							<th className='columna'>Estado</th>
 							<th className='columna'>Acción</th>
 						</tr>
@@ -89,7 +90,10 @@ const VerCitas = () => {
 
 					<tbody className='tabla-body'>
 						{citas.map((cita, i) => {
-							const fechaFormateada = new Date(cita.fecha).toLocaleDateString();
+							const fechaFormateada = new Date(cita.fecha);
+							const dia = fechaFormateada.getUTCDate();
+							const mes = fechaFormateada.getUTCMonth() + 1;
+							const year = fechaFormateada.getUTCFullYear();
 							const horaFormateada = new Date(cita.hora).toLocaleTimeString([], {
 								hour: "2-digit",
 								minute: "2-digit",
@@ -99,8 +103,9 @@ const VerCitas = () => {
 								<tr key={cita._id}>
 									<td className='tabla-celda'>{i + 1}</td>
 									<td className='tabla-celda'>{cita.doctorInfo.nombre}</td>
-									<td className='tabla-celda'>{fechaFormateada}</td>
+									<td className='tabla-celda'>{`${dia}/${mes}/${year}`}</td>
 									<td className='tabla-celda'>{horaFormateada}</td>
+									<td className='tabla-celda'>{cita.motivo}</td>
 									<td
 										className={`'tabla-celda'
 									`}>

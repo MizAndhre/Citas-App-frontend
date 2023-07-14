@@ -98,7 +98,7 @@ const Sidebar = () => {
 				<div
 					className={`bg-gradient-to-br from-teal-800 to-teal-900 h-screen  ${
 						open ? "w-72" : "w-16"
-					} text-white px-4`}>
+					} text-white ${open ? "px-4" : "px-3"}`}>
 					{/* ? ICONO */}
 					<div className='py-3 flex justify-end'>
 						<i

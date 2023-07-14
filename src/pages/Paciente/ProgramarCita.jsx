@@ -144,6 +144,12 @@ const ProgramarCita = () => {
 									</span>
 								</p>
 							</div>
+							<div>
+								<p className='font-thin text-sm'>
+									Las citas deben ser eligidas con los minutos en 00 o 30. Ejemplo: 8:30 |
+									13:00
+								</p>
+							</div>
 							<div className='mt-5'>
 								<label className='label-form-sub' htmlFor='fecha'>
 									Fecha

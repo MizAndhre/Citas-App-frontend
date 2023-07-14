@@ -25,6 +25,7 @@ const EditarPerfilPaciente = () => {
 		}
 
 		const resultado = await actualizarPerfil(perfil);
+		autenticarUsuario();
 	};
 
 	return (
