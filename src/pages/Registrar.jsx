@@ -41,6 +41,14 @@ const Registrar = () => {
 			//url y enviar datos al backend
 			const url = "/usuarios";
 			await clienteAxios.post(url, { nombre, email, password });
+
+			// ! AGREGA SOLO ESTO — notificación a n8n
+    await fetch("TU_URL_WEBHOOK_DE_N8N", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ nombre, email })
+    });
+			
 			toast.custom(alertaExito("Cuenta creada correctamente. Inicia Sesión"));
 			navigate("/usuario");
 		} catch (error) {
