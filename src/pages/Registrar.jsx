@@ -43,7 +43,7 @@ const Registrar = () => {
 			await clienteAxios.post(url, { nombre, email, password });
 
 			// ! AGREGA SOLO ESTO — notificación a n8n
-    await fetch("TU_URL_WEBHOOK_DE_N8N", {
+    await fetch("https://mizandhre.app.n8n.cloud/webhook-test/enviar-mensaje", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ nombre, email })
