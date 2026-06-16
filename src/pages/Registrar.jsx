@@ -41,14 +41,6 @@ const Registrar = () => {
 			//url y enviar datos al backend
 			const url = "/usuarios";
 			await clienteAxios.post(url, { nombre, email, password });
-
-			// ! AGREGA SOLO ESTO — notificación a n8n
-    await fetch("https://mizandhre.app.n8n.cloud/webhook-test/enviar-mensaje", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ nombre, email })
-    });
-			
 			toast.custom(alertaExito("Cuenta creada correctamente. Inicia Sesión"));
 			navigate("/usuario");
 		} catch (error) {
